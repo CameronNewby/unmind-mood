@@ -1,0 +1,28 @@
+{
+  "users": [],
+  "checkin": [
+    {
+      "id": 1,
+      "userId": 1,
+      "mood": 4,
+      "feelings": [
+        "Happy",
+        "Content"
+      ],
+      "comment": "I am feeling okay pretty average.",
+      "createdAt": 1588521436760
+    },
+    {
+      "userId": 1,
+      "mood": 6,
+      "feelings": [
+        "Happy",
+        "Optimistic",
+        "Excited"
+      ],
+      "comment": "I'm so excited!!",
+      "createdAt": 1588521436760,
+      "id": 2
+    }
+  ]
+}

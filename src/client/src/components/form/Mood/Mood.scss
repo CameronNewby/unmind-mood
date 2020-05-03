@@ -1,0 +1,25 @@
+.moodContainer {
+    flex: 1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 90%;
+    align-self: center;
+}
+
+.moodRange {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-self: center;
+}
+
+.navigationButtons {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-self: center;
+}

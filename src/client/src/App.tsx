@@ -2,6 +2,8 @@ import React, { Component, Fragment }from 'react';
 import logo from './unmindLogo.png';
 import './App.scss';
 
+import MoodCheckIn from './containers/MoodCheckIn'
+
 class App extends Component {
   constructor(props: any) {
     super(props)
@@ -16,6 +18,7 @@ class App extends Component {
             <img src={logo} className="appLogo" alt="Unmind" />
           </div>
         </div>
+        <MoodCheckIn onCompleteCallback={() => {}}/>
       </Fragment>
     )
   }

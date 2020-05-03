@@ -1,0 +1,28 @@
+@import '../../../constants.scss';
+
+.commentContainer {
+    flex: 1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 90%;
+    align-self: center;
+}
+
+.commentContainer textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+    border-radius: 20px;
+    border: $border-standard;
+    padding: 10px;
+}
+
+.navigationButtons {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-self: center;
+}

@@ -1,0 +1,37 @@
+.feelingContainer {
+  flex: 1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 90%;
+  align-self: center;
+}
+
+.feelingList {
+  padding-left: 0;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.feelingList div {
+  flex: auto;
+  min-width: 165px;
+  margin: 0 8px 8px 0;
+}
+
+.feelingList div Button {
+  width: 100%;
+}
+
+.feelingList div:nth-child(4n + 1) {
+  width: 0%;
+}
+
+.navigationButtons {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-self: center;
+}
