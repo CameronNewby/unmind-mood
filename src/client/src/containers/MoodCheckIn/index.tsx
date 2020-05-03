@@ -1,7 +1,4 @@
 import React from 'react'
-import axios from 'axios'
-
-import { API_ENDPOINT } from '../../config'
 
 // Component Imports
 import Mood from '../../components/form/Mood'
@@ -13,7 +10,14 @@ import './MoodCheckIn.scss'
 
 // Types & Interfaces
 interface Props {
-  onCompleteCallback(): void
+  onCompleteCallback(data: CheckInData): void
+}
+
+export interface CheckInData {
+  userId: number
+  mood: number
+  feelings: string[]
+  comment: string
 }
 
 interface FormSteps {
@@ -69,35 +73,20 @@ export default class MoodCheckIn extends React.Component<Props, State> {
     })
   }
 
-  onCommentCallback = (comment: string) => {
+  onCommentCallback = async (comment: string) => {
     let finalState = { ...this.state, comment: { value: comment, show: false } }
     this.setState(finalState)
 
     console.log('Finish', finalState)
-    this._processAndSendCheckIn(finalState)
-    this.props.onCompleteCallback()
-  }
-
-  _processAndSendCheckIn = async (state: State) => {
-    interface CheckInData {
-      userId: number
-      mood: number
-      feelings: string[]
-      comment: string
-    }
 
     const data: CheckInData = {
       userId: 1,
-      mood: state.mood.value,
-      feelings: state.feeling.value,
-      comment: state.comment.value
+      mood: finalState.mood.value,
+      feelings: finalState.feeling.value,
+      comment: finalState.comment.value
     }
-
-    try {
-      await axios.post(`${API_ENDPOINT}/checkin`, data)
-    } catch (err) {
-      console.error(err)
-    }
+    
+    this.props.onCompleteCallback(data)
   }
 
   render() {

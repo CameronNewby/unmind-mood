@@ -1,12 +1,23 @@
 import React, { Component, Fragment }from 'react';
+import axios from 'axios'
 import logo from './unmindLogo.png';
 import './App.scss';
 
-import MoodCheckIn from './containers/MoodCheckIn'
+import { API_ENDPOINT } from './config'
+
+import MoodCheckIn, { CheckInData } from './containers/MoodCheckIn'
 
 class App extends Component {
   constructor(props: any) {
     super(props)
+  }
+
+  _processAndSendCheckIn = async (data: CheckInData) => {
+    try {
+      await axios.post(`${API_ENDPOINT}/checkin`, data)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   render() {
@@ -18,7 +29,7 @@ class App extends Component {
             <img src={logo} className="appLogo" alt="Unmind" />
           </div>
         </div>
-        <MoodCheckIn onCompleteCallback={() => {}}/>
+        <MoodCheckIn onCompleteCallback={this._processAndSendCheckIn}/>
       </Fragment>
     )
   }
