@@ -1,0 +1,45 @@
+{
+  "name": "unmind",
+  "version": "1.0.0",
+  "description": "unmind mood check in challenge",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently -n server,client -c cyan,yellow 'nodemon' 'npm run start --prefix src/client'"
+  },
+  "author": "Cameron Newby",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.6",
+    "@types/json-server": "^0.14.2",
+    "@types/node": "^13.13.4",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "json-server": "^0.16.1",
+    "nodemon": "^2.0.3",
+    "styled-components": "^5.1.0",
+    "ts-node": "^8.9.1",
+    "tslint": "^6.1.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "express": "^4.17.1"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      "client/lib"
+    ],
+    "ext": "ts,js",
+    "exec": "node -r ts-node/register -r dotenv/config src/index.ts && node src/client"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  }
+}
