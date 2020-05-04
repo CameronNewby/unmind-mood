@@ -5,24 +5,33 @@
       "id": 1,
       "userId": 1,
       "mood": 4,
-      "feelings": [
-        "Happy",
-        "Content"
-      ],
+      "feelings": ["Happy", "Content"],
       "comment": "I am feeling okay pretty average.",
-      "createdAt": 1588521436760
+      "createdAt": "2020-04-27T18:11:00.000Z"
     },
     {
       "userId": 1,
-      "mood": 6,
-      "feelings": [
-        "Happy",
-        "Optimistic",
-        "Excited"
-      ],
+      "mood": 4,
+      "feelings": ["Happy", "Optimistic", "Excited"],
       "comment": "I'm so excited!!",
-      "createdAt": 1588521436760,
+      "createdAt": "2020-04-27T14:56:00.000Z",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "mood": 2,
+      "feelings": ["Excited"],
+      "comment": "",
+      "createdAt": "2020-05-03T17:03:17.234Z",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "mood": 7,
+      "feelings": ["Excited", "Happy"],
+      "comment": "",
+      "createdAt": "2020-04-29T13:03:17.234Z",
+      "id": 4
     }
   ]
 }

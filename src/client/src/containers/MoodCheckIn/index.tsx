@@ -18,6 +18,8 @@ export interface CheckInData {
   mood: number
   feelings: string[]
   comment: string
+  id?: number
+  createdAt?: string
 }
 
 interface FormSteps {

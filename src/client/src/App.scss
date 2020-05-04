@@ -18,17 +18,16 @@ html, body, #root {
 
 .navBarContent {
   padding: 8px;
-  border-bottom: solid 1px #dddddd;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: calc(50% - 60px);
   font-size: 20px;
   color: #4a4a4a;
 }
 
 .appLogo {
   max-height: 33px;
+  margin: auto;
 }
 
 h2 {

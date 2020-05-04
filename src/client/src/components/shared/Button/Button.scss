@@ -13,7 +13,7 @@
         color: $secondary-light;
     }
 
-    &:hover {
+    &:hover:enabled {
         background-color: $positive;
         color: $secondary-light;
     }

@@ -6,6 +6,7 @@ import './App.scss';
 import { API_ENDPOINT } from './config'
 
 import MoodCheckIn, { CheckInData } from './containers/MoodCheckIn'
+import Insights from './containers/Insights'
 
 class App extends Component {
   constructor(props: any) {
@@ -25,11 +26,10 @@ class App extends Component {
       <Fragment>
         <div className="navBar">
           <div className="navBarContent">
-            <i className="fa fa-bars"></i>
             <img src={logo} className="appLogo" alt="Unmind" />
           </div>
         </div>
-        <MoodCheckIn onCompleteCallback={this._processAndSendCheckIn}/>
+        <Insights />
       </Fragment>
     )
   }

@@ -1,0 +1,32 @@
+.moodFace {
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+}
+
+.dateMonth {
+    flex: 1;
+    align-self: center;
+}
+
+.dateTime {
+    flex: 3;
+    align-self: center;
+}
+
+.expandedContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.feelingsContainer {
+    margin: 0px 0px 10px 0px;
+}
+
+.feelingsContainer > * {
+    margin: 0px 10px 0px 0px;
+}
+
+.commentContainer {
+    margin: 10px 0px 0px 10px;
+}

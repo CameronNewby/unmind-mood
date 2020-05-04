@@ -6,7 +6,7 @@ interface ButtonProps {
   text: string
   toggle?: boolean
   disabled?: boolean
-  onClick(event: React.MouseEvent<HTMLButtonElement>, text: string): void
+  onClick?(event: React.MouseEvent<HTMLButtonElement>, text: string): void
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
       disabled={props.disabled}
       onClick={(event) => {
         if (props.toggle) setActive(!active)
-        props.onClick(event, props.text)
+        if (props.onClick) props.onClick(event, props.text)
       }}
     >
       {props.text}
