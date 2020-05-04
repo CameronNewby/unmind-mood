@@ -25,8 +25,6 @@ export default class Comment extends React.Component<Props, State> {
 
   // Event Handlers
   onNavigationClick = (e: React.MouseEvent<HTMLButtonElement>, text: string) => {
-    console.log(text)
-    console.log(this.state.comment)
     this.props.onCompleteCallback(this.state.comment)
   }
 

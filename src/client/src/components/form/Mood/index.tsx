@@ -26,7 +26,6 @@ export default class Mood extends React.Component<Props, State> {
   }
 
   // Event Handlers
-
   onMoodRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ moodRange: parseInt(e.target.value) })
   }

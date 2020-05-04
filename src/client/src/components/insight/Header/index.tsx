@@ -1,10 +1,13 @@
 import React from 'react'
 
-import AveragePie from './AveragePie'
+// Component Imports
+import Chart from './Chart'
 import { CheckInData } from '../../../containers/MoodCheckIn'
 
+// Style Imports
 import './Header.scss'
 
+// Types & Interfaces
 interface HeaderProps {
   checkIns: CheckInData[]
 }
@@ -31,7 +34,11 @@ const _calculateCounts = (arr: CheckInData[]) => {
 export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <div className="headerContainer">
-      <AveragePie avg={_calculateAvg(props.checkIns)} propertyCounts={_calculateCounts(props.checkIns)} count={props.checkIns.length}></AveragePie>
+      <Chart
+        avg={_calculateAvg(props.checkIns)}
+        propertyCounts={_calculateCounts(props.checkIns)}
+        count={props.checkIns.length}
+      ></Chart>
     </div>
   )
 }

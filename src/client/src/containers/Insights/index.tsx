@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import moment from 'moment'
 
 import { API_ENDPOINT } from '../../config'
 
@@ -33,7 +34,6 @@ export default class Insights extends React.Component<Props, State> {
   async componentDidMount() {
     try {
       const checkIns = await axios.get<CheckInData[]>(`${API_ENDPOINT}/checkin/${this.state.userId}`)
-      console.log(checkIns)
       this.setState({ checkIns: checkIns.data })
     } catch (err) {
       console.error(err)
@@ -45,15 +45,22 @@ export default class Insights extends React.Component<Props, State> {
     this.setState({ expanded: expandedPanel })
   }
 
+  // Private Methods
+  _sortCheckInsByDate = (a: CheckInData, b: CheckInData): number => {
+    return moment(b.createdAt).diff(moment(a.createdAt))
+  }
+
   render() {
     return (
       <div className="insightContainer">
         <div className="chartContainer">
           <Header checkIns={this.state.checkIns}></Header>
         </div>
-        {this.state.checkIns.map((item, idx) => (
-          <Item item={item} idx={idx} expanded={this.state.expanded} onChange={this.onPanelChange} />
-        ))}
+        <div className="listContainer">
+          {this.state.checkIns.sort(this._sortCheckInsByDate).map((item, idx) => (
+            <Item key={idx} item={item} idx={idx} expanded={this.state.expanded} onChange={this.onPanelChange} />
+          ))}
+        </div>
       </div>
     )
   }

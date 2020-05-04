@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
+// Style Imports
 import './Button.scss'
 
+// Types & Interfaces
 interface ButtonProps {
   text: string
   toggle?: boolean

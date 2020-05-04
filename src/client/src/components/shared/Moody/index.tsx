@@ -1,7 +1,9 @@
 import React from 'react'
 
+// Style Imports
 import './Moody.scss'
 
+// Types & Interfaces
 interface MoodyProps {
   moodRange: number
   cx?: number
@@ -46,7 +48,7 @@ export const Moody: React.FC<MoodyProps> = (props) => {
   let currentFace: FaceSVGStructure = props.moodRange <= 3 ? sadFace : props.moodRange > 4 ? happyFace : neutralFace
 
   return (
-    <svg x={props.cx} y={props.cy} dy={8} viewBox={props.cy && props.cx ? null : "0 0 88 72"}>
+    <svg x={props.cx} y={props.cy} dy={8} viewBox={props.cy && props.cx ? null : '0 0 88 72'}>
       <path d={currentFace.eyebrows.l} fill="none" strokeLinecap="round" stroke="rgb(223, 223, 223)" strokeWidth="5" />
       <path d={currentFace.eyebrows.r} fill="none" strokeLinecap="round" stroke="rgb(223, 223, 223)" strokeWidth="5" />
       <circle cx="25" cy="20" r="5" fill={currentFace.color} />

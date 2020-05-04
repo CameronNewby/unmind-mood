@@ -9,10 +9,6 @@ import Comment from '../../components/form/Comment'
 import './MoodCheckIn.scss'
 
 // Types & Interfaces
-interface Props {
-  onCompleteCallback(data: CheckInData): void
-}
-
 export interface CheckInData {
   userId: number
   mood: number
@@ -44,6 +40,10 @@ interface State {
   comment: CommentStep
 }
 
+interface Props {
+  onCompleteCallback(data: CheckInData): void
+}
+
 export default class MoodCheckIn extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -63,6 +63,7 @@ export default class MoodCheckIn extends React.Component<Props, State> {
     }
   }
 
+  // Event Handlers
   onMoodCallback = (mood: number) => {
     this.setState({ ...this.state, mood: { value: mood, show: false }, feeling: { ...this.state.feeling, show: true } })
   }
@@ -79,15 +80,13 @@ export default class MoodCheckIn extends React.Component<Props, State> {
     let finalState = { ...this.state, comment: { value: comment, show: false } }
     this.setState(finalState)
 
-    console.log('Finish', finalState)
-
     const data: CheckInData = {
       userId: 1,
       mood: finalState.mood.value,
       feelings: finalState.feeling.value,
-      comment: finalState.comment.value
+      comment: finalState.comment.value,
     }
-    
+
     this.props.onCompleteCallback(data)
   }
 

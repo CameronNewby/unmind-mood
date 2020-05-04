@@ -1,11 +1,11 @@
 @import '../../../constants.scss';
 
 .commentContainer {
-    flex: 1;
     margin: 20px;
     display: flex;
     flex-direction: column;
     max-width: 500px;
+    max-height: 500px;
     width: 90%;
     align-self: center;
 }

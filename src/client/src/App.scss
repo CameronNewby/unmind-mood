@@ -2,6 +2,7 @@
 
 html, body, #root {
   height: 100%;
+  font-family: Lato,Circularstd,sans-serif;
 }
 
 #root {
@@ -14,6 +15,7 @@ html, body, #root {
   background-color: white;
   width: 100%;
   top: 0;
+  z-index: 1000;
 }
 
 .navBarContent {
@@ -23,15 +25,39 @@ html, body, #root {
   justify-content: space-between;
   font-size: 20px;
   color: #4a4a4a;
+  background-color: #ffffff;
+}
+
+.navBarContent Button {
+  margin: 0px 10px 0px 0px;
 }
 
 .appLogo {
   max-height: 33px;
-  margin: auto;
+  margin-left: 25px;
+  margin-right: auto;
 }
 
 h2 {
   &.h6 {
     font-size: 36px;
   }
+}
+
+.splashScreenContainer {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter {
+  max-width: 500px;
+}
+
+.typewriter h1 {
+  font-size: 50px;
+  color: #04c2b5;
+  text-align: center;
 }

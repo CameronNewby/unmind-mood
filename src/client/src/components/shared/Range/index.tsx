@@ -1,7 +1,9 @@
 import React from 'react'
 
+// Style Imports
 import './Range.scss'
 
+// Types & Interfaces
 interface RangeProps {
   min: number
   max: number

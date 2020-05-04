@@ -33,8 +33,6 @@ export default class Feeling extends React.Component<Props, State> {
   }
 
   onNavigationClick = (e: React.MouseEvent<HTMLButtonElement>, text: string) => {
-    console.log(text)
-    console.log(this.state.selectedFeelings)
     this.props.onCompleteCallback(this.state.selectedFeelings)
   }
 
@@ -42,8 +40,8 @@ export default class Feeling extends React.Component<Props, State> {
     return (
       <div className="feelingContainer">
         <div className="feelingList">
-          {feelings.map((item) => (
-            <div>
+          {feelings.map((item: string, idx: number) => (
+            <div key={idx}>
               <Button text={item} toggle={true} onClick={this.onFeelingButtonClick} />
             </div>
           ))}
