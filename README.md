@@ -1,4 +1,4 @@
-# Unmind technical test
+# Unmind Technical Test
 Had a great time doing this test, its on the large side in terms of test but the app components requested are fun to work on.
 
 ## Overview of Approach
