@@ -71,3 +71,18 @@ Finally from root direectory run both the app and the server
 npm run start
 ```
 
+## Testing/Linting
+
+I have not written tests for server side and only have partial coverage on frontend if had more time would get better coverage. 
+
+To run unit tests go to src/client directory
+
+```
+cd src/client && npm run test
+```
+
+To run linter (fixed all errorsstill have small amount of warnings that could be addressed at later date)
+
+```
+cd src/client && npm run lint
+```
