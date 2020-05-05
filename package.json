@@ -4,7 +4,6 @@
   "description": "unmind mood check in challenge",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently -n server,client -c cyan,yellow 'nodemon' 'npm run start --prefix src/client'"
   },
