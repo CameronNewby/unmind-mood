@@ -12,17 +12,23 @@ interface HeaderProps {
   checkIns: CheckInData[]
 }
 
+export interface MoodCounts {
+  sad: number
+  happy: number
+  okay: number
+}
+
 // Private Methods
-const _calculateAvg = (arr: CheckInData[]) => {
-  let count: number = 0
+const _calculateAvg = (arr: CheckInData[]): number => {
+  let count = 0
   arr.forEach((element: CheckInData) => {
     count = count + element.mood
   })
   return count / arr.length
 }
 
-const _calculateCounts = (arr: CheckInData[]) => {
-  let counts = { sad: 0, okay: 0, happy: 0 }
+const _calculateCounts = (arr: CheckInData[]): MoodCounts => {
+  const counts: MoodCounts = { sad: 0, okay: 0, happy: 0 }
   arr.forEach((element: CheckInData) => {
     if (element.mood < 4) counts.sad++
     else if (element.mood > 4) counts.happy++
@@ -31,7 +37,7 @@ const _calculateCounts = (arr: CheckInData[]) => {
   return counts
 }
 
-export const Header: React.FC<HeaderProps> = (props) => {
+export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   return (
     <div className="headerContainer">
       <Chart

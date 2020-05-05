@@ -19,18 +19,17 @@ import Button from './components/shared/Button'
 
 library.add(faAngleDown, faBars)
 
-interface Props {}
 interface State {
   checkIn: boolean
   insights: boolean
 }
-class App extends React.Component<Props, State> {
-  constructor(props: any) {
+class App extends React.Component<{}, State> {
+  constructor(props: {}) {
     super(props)
     this.state = { checkIn: false, insights: false }
   }
 
-   // Event Handlers
+  // Event Handlers
   _processAndSendCheckIn = async (data: CheckInData) => {
     try {
       await axios.post(`${API_ENDPOINT}/checkin`, data)
@@ -40,23 +39,22 @@ class App extends React.Component<Props, State> {
     }
   }
 
-  _clearState = () => {
+  _clearState = (): void => {
     this.setState({ ...this.state, checkIn: false, insights: false })
   }
 
-  _checkIn = () => {
+  _checkIn = (): void => {
     this.setState({ ...this.state, checkIn: true, insights: false })
   }
 
-  _insights = () => {
+  _insights = (): void => {
     this.setState({ ...this.state, insights: true, checkIn: false })
   }
 
   render() {
-
     const _renderSplashScreen = () => {
       if (!this.state.checkIn && !this.state.insights) {
-        return(
+        return (
           <div className="splashScreenContainer">
             <div className="typewriter">
               <Typist cursor={{ element: '' }}>

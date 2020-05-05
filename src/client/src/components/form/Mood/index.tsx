@@ -14,7 +14,7 @@ interface Props {
 }
 
 interface State {
-    moodRange: number
+  moodRange: number
 }
 
 export default class Mood extends React.Component<Props, State> {
@@ -26,11 +26,11 @@ export default class Mood extends React.Component<Props, State> {
   }
 
   // Event Handlers
-  onMoodRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onMoodRangeChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     this.setState({ moodRange: parseInt(e.target.value) })
   }
 
-  onNavigationClick = (e: React.MouseEvent<HTMLButtonElement>, text: string) => {
+  onNavigationClick = () => {
     this.props.onCompleteCallback(this.state.moodRange)
   }
 
@@ -42,7 +42,7 @@ export default class Mood extends React.Component<Props, State> {
           <Range value={this.state.moodRange} min={1} max={7} onChange={this.onMoodRangeChange} />
         </div>
         <div className="navigationButtons">
-          <Button text="Next" toggle={true} onClick={this.onNavigationClick}/>
+          <Button text="Next" toggle={true} onClick={this.onNavigationClick} />
         </div>
       </div>
     )

@@ -11,14 +11,14 @@ interface ButtonProps {
   onClick?(event: React.MouseEvent<HTMLButtonElement>, text: string): void
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const [active, setActive] = useState(false)
 
   return (
     <button
       className={active ? 'button selected' : 'button'}
       disabled={props.disabled}
-      onClick={(event) => {
+      onClick={(event): void => {
         if (props.toggle) setActive(!active)
         if (props.onClick) props.onClick(event, props.text)
       }}

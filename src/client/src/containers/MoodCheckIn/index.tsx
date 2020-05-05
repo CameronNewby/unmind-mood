@@ -64,11 +64,11 @@ export default class MoodCheckIn extends React.Component<Props, State> {
   }
 
   // Event Handlers
-  onMoodCallback = (mood: number) => {
+  onMoodCallback = (mood: number): void => {
     this.setState({ ...this.state, mood: { value: mood, show: false }, feeling: { ...this.state.feeling, show: true } })
   }
 
-  onFeelingCallback = (feelings: string[]) => {
+  onFeelingCallback = (feelings: string[]): void => {
     this.setState({
       ...this.state,
       feeling: { value: feelings, show: false },
@@ -77,7 +77,7 @@ export default class MoodCheckIn extends React.Component<Props, State> {
   }
 
   onCommentCallback = async (comment: string) => {
-    let finalState = { ...this.state, comment: { value: comment, show: false } }
+    const finalState = { ...this.state, comment: { value: comment, show: false } }
     this.setState(finalState)
 
     const data: CheckInData = {

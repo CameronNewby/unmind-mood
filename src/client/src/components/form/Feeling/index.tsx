@@ -12,12 +12,13 @@ interface Props {
 }
 
 interface State {
-    selectedFeelings: string[]
+  selectedFeelings: string[]
 }
 
 // Constantants
 const feelings = ['Depressed', 'Optimistic', 'Bored', 'Happy', 'Content', 'Anxious', 'Excited', 'Angry', 'Stressed']
-const toggleFeeling = (list: string[], feeling: string) => list.includes(feeling) ? list.filter((i: string) => i !== feeling) : [ ...list, feeling ]
+const toggleFeeling = (list: string[], feeling: string) =>
+  list.includes(feeling) ? list.filter((i: string) => i !== feeling) : [...list, feeling]
 
 export default class Feeling extends React.Component<Props, State> {
   constructor(props: Props) {
@@ -28,11 +29,11 @@ export default class Feeling extends React.Component<Props, State> {
   }
 
   // Event Handlers
-  onFeelingButtonClick = (e: React.MouseEvent<HTMLButtonElement>, feeling: string) => {
-    this.setState({selectedFeelings: toggleFeeling(this.state.selectedFeelings, feeling)})
+  onFeelingButtonClick = (e: React.MouseEvent<HTMLButtonElement>, feeling: string): void => {
+    this.setState({ selectedFeelings: toggleFeeling(this.state.selectedFeelings, feeling) })
   }
 
-  onNavigationClick = (e: React.MouseEvent<HTMLButtonElement>, text: string) => {
+  onNavigationClick = () => {
     this.props.onCompleteCallback(this.state.selectedFeelings)
   }
 

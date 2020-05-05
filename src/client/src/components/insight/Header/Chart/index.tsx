@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { PieChart, Pie, Sector } from 'recharts'
+import { PieChart, Pie, Sector, PieProps } from 'recharts'
 
 // Component Imports
 import Moody from '../../../shared/Moody'
 import Stats from '../Stats'
+import { MoodCounts } from '../../Header'
 
 // Types & Interfaces
 export interface ChartProps {
   avg: number
   count: number
-  propertyCounts: any
+  propertyCounts: MoodCounts
 }
 
 const renderActiveShape = (props) => {
@@ -44,7 +45,7 @@ const _calculatePercentage = (count: number, total: number) => {
   return (count / total) * 100
 }
 
-export const Chart: React.FC<ChartProps> = (props) => {
+export const Chart: React.FC<ChartProps> = (props: ChartProps) => {
   const [active, setActive] = useState(0)
   const data = [
     {

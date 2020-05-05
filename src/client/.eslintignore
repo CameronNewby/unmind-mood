@@ -1,0 +1,9 @@
+node_modules/
+build/
+public/
+
+serviceWorker.ts
+setupTests.ts
+
+src/**/*.test.**
+src/components/insight/Header/Chart/index.tsx

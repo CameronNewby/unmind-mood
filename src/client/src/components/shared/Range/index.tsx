@@ -12,7 +12,7 @@ interface RangeProps {
   onChange(event: React.ChangeEvent<HTMLInputElement>): void
 }
 
-export const Range: React.FC<RangeProps> = (props) => {
+export const Range: React.FC<RangeProps> = (props: RangeProps) => {
   return (
     <div className="rangeContainer">
       <input

@@ -44,8 +44,8 @@ const sadFace: FaceSVGStructure = {
   color: 'rgb(62, 64, 64)',
 }
 
-export const Moody: React.FC<MoodyProps> = (props) => {
-  let currentFace: FaceSVGStructure = props.moodRange <= 3 ? sadFace : props.moodRange > 4 ? happyFace : neutralFace
+export const Moody: React.FC<MoodyProps> = (props: MoodyProps) => {
+  const currentFace: FaceSVGStructure = props.moodRange <= 3 ? sadFace : props.moodRange > 4 ? happyFace : neutralFace
 
   return (
     <svg x={props.cx} y={props.cy} dy={8} viewBox={props.cy && props.cx ? null : '0 0 88 72'}>

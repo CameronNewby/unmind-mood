@@ -9,7 +9,7 @@ interface StatsProps {
   fill: string
 }
 
-export const Stats: React.FC<StatsProps> = (props) => {
+export const Stats: React.FC<StatsProps> = (props: StatsProps) => {
   return (
     <svg x={props.x} y={props.y} width={600} height={400} viewBox="0 0 500 300">
       <text x={120} y={20} fill={props.fill} textAnchor="middle" fontSize="36" fontWeight="bold">

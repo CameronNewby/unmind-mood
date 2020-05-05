@@ -13,15 +13,14 @@ import Header from '../../components/insight/Header'
 import './Insights.scss'
 
 // Types & Interfaces
-interface Props {}
 interface State {
   userId: number
   checkIns: CheckInData[]
   expanded: number | boolean
 }
 
-export default class Insights extends React.Component<Props, State> {
-  constructor(props: Props) {
+export default class Insights extends React.Component<{}, State> {
+  constructor(props: {}) {
     super(props)
     this.state = {
       userId: 1,
@@ -41,7 +40,7 @@ export default class Insights extends React.Component<Props, State> {
   }
 
   // Event Handlers
-  onPanelChange = (expandedPanel: number | boolean) => {
+  onPanelChange = (expandedPanel: number | boolean): void => {
     this.setState({ expanded: expandedPanel })
   }
 

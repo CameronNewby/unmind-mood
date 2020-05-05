@@ -21,8 +21,8 @@ interface ItemProps {
   onChange(expandedPanel: number | boolean): void
 }
 
-export const Item: React.FC<ItemProps> = (props) => {
-  const onPanelChange = (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
+export const Item: React.FC<ItemProps> = (props: ItemProps) => {
+  const onPanelChange = (event: React.ChangeEvent<{}>, isExpanded: boolean): void => {
     props.onChange(isExpanded ? props.idx : false)
   }
 
